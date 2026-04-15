@@ -1,4 +1,4 @@
-## Hi there 👋
+# i do silly thing
 
 <!--
 **Chocorot/Chocorot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
