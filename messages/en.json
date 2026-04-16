@@ -1,0 +1,109 @@
+{
+  "Index": {
+    "title": "Chocorot",
+    "subtitle": "Creative Developer & Builder",
+    "hero": {
+      "subtitle": "Building things that are fun, useful, or just plain interesting."
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "apps": "Apps",
+    "websites": "Websites",
+    "socials": "Socials",
+    "loading": "Loading..."
+  },
+  "Portfolio": {
+    "title_desc": "A collection of my work on GitHub, from libraries to experimental tools.",
+    "loading_repos": "Fetching GitHub repositories...",
+    "empty": "Nothing found or still loading...",
+    "loading_error": "Failed to load repositories.",
+    "retry": "Retry"
+  },
+  "About": {
+    "title": "About Me",
+    "bio": "I am a builder who loves to create things across software and hardware.",
+    "software": {
+      "title": "Software Development",
+      "skills": "JS/TS, HTML/CSS, Java, PHP, Python"
+    },
+    "hardware": {
+      "title": "Hardware & Electronics",
+      "skills": "Welding, Circuit Designing, Electronics Repair"
+    },
+    "hobbies": {
+      "title": "Hobbies & Interests",
+      "piano": "Piano (Self-taught)",
+      "games": "Minecraft, Terraria",
+      "ai": "Artificial Intelligence & Automation",
+      "labels": {
+        "music": "Music",
+        "gaming": "Gaming",
+        "tech": "Tech"
+      }
+    }
+  },
+  "Websites": {
+    "title": "My Websites",
+    "visit": "Visit Website",
+    "naic": {
+      "name": "NAIC Competition",
+      "description": "AI-assisted assessmet of retinal fundus images for early detection of Diabetic Retinopathy (DR)."
+    },
+    "echo": {
+      "name": "Echo Bot",
+      "description": "Autonomous community guardian for Discord with multimodal reasoning and real-time dashboards."
+    }
+  },
+  "Apps": {
+    "title": "Apps",
+    "subtitle": "A collection of my experimental applications.",
+    "coming_soon": "More Apps Coming Soon",
+    "beeper": "Morse Beeper",
+    "beeper_desc": "Translate text to Morse code and listen to the signal.",
+    "pi": "Value of Pi",
+    "pi_desc": "Explore the first 1,000 digits of the transcendental number π.",
+    "clicker": "Clicker Counter",
+    "clicker_desc": "A satisfying interactive clicker to track your speed.",
+    "color_picker": "Color Studio",
+    "color_picker_desc": "Clean and simple utility for color conversion and preview.",
+    "MorseBeeper": {
+      "placeholder": "Type something to translate...",
+      "characters": "{count} characters",
+      "play": "Play Sequence",
+      "manual": "Manual Beep",
+      "tip": "Tip: Press and hold \"Manual Beep\" to sound a tone, or click \"Play Sequence\" to hear your text in Morse Code."
+    },
+    "PiDisplay": {
+      "copy": "Copy Pi",
+      "copied": "Copied!",
+      "showing": "Showing the first 1,000 digits of π",
+      "infinite": "Infinite & Transcendental"
+    },
+    "Clicker": {
+      "title": "Clicker Master",
+      "subtitle": "Click the button to count up",
+      "clicks": "Clicks",
+      "reset": "Reset Score",
+      "reset_confirm": "Are you sure you want to reset your score?",
+      "saved": "Scores are saved to your browser"
+    },
+    "ColorStudio": {
+      "title": "Color Studio",
+      "random": "Random Color",
+      "tip": "Click the preview square to open the color picker"
+    }
+  },
+  "Common": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "reset": "Reset",
+    "back": "Back"
+  },
+  "Footer": {
+    "text": "Made with care by Chocorot",
+    "all_rights": "All rights reserved."
+  }
+}

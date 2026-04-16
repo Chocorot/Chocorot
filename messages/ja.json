@@ -1,0 +1,107 @@
+{
+  "Index": {
+    "title": "Chocorot",
+    "subtitle": "クリエイティブ・デベロッパー ＆ ビルダー",
+    "hero": {
+      "subtitle": "楽しくて便利、あるいは単純に興味深いものを作っています。"
+    }
+  },
+  "Navigation": {
+    "home": "ホーム",
+    "about": "について",
+    "portfolio": "ポートフォリオ",
+    "apps": "アプリ",
+    "websites": "ウェブサイト",
+    "socials": "SNS",
+    "loading": "読み込み中..."
+  },
+  "Portfolio": {
+    "title_desc": "GitHub 上の活動。ライブラリから実験的なツールまで、私の作品集です。",
+    "loading_repos": "GitHub リポジトリを取得中...",
+    "empty": "リポジトリが見つからないか、読み込み中です..."
+  },
+  "About": {
+    "title": "私について",
+    "bio": "ソフトウェアとハードウェアの両面で物作りをすることが大好きなビルダーです。",
+    "software": {
+      "title": "ソフトウェア開発",
+      "skills": "JS/TS, HTML/CSS, Java, PHP, Python"
+    },
+    "hardware": {
+      "title": "ハードウェア・電子工作",
+      "skills": "溶接, 回路設計, 電子機器修理"
+    },
+    "hobbies": {
+      "title": "趣味・興味",
+      "piano": "ピアノ（独学）",
+      "games": "マインクラフト (Minecraft), テラリア (Terraria)",
+      "ai": "人工知能 ＆ オートメーション",
+      "labels": {
+        "music": "音楽",
+        "gaming": "ゲーム",
+        "tech": "技術"
+      }
+    }
+  },
+  "Websites": {
+    "title": "ウェブサイト",
+    "visit": "ウェブサイトを表示",
+    "naic": {
+      "name": "NAIC コンペティション",
+      "description": "糖尿病網膜症 (DR) の早期発見のための、AIによる眼底画像診断アシスト。"
+    },
+    "echo": {
+      "name": "Echo Bot",
+      "description": "マルチモーダル推論とリアルタイムダッシュボードを備えた、Discord用の自律型コミュニティ・ガーディアン。"
+    }
+  },
+  "Apps": {
+    "title": "アプリ",
+    "subtitle": "実験的なアプリケ―ションのコレクションです。",
+    "coming_soon": "さらなるアプリを準備中",
+    "beeper": "モールス信号ビーパー",
+    "beeper_desc": "テキストをモールス信号に変換し、音を確認できます。",
+    "pi": "円周率",
+    "pi_desc": "超越数 π の最初の 1,000 桁を探索しましょう。",
+    "clicker": "クリックカウンター",
+    "clicker_desc": "クリック速度を計測する、心地よい操作感のカウンター。",
+    "color_picker": "カラースタジオ",
+    "color_picker_desc": "シンプルな色の変換とプレビューのためのユーティリティ。",
+    "MorseBeeper": {
+      "placeholder": "翻訳するテキストを入力...",
+      "characters": "{count} 文字",
+      "play": "再生",
+      "manual": "手動ビープ",
+      "tip": "ヒント：「手動ビープ」を長押しして音を鳴らすか、「再生」をクリックしてテキストをモールス信号で聴くことができます。"
+    },
+    "PiDisplay": {
+      "copy": "πをコピー",
+      "copied": "コピーしました！",
+      "showing": "πの最初の1,000桁を表示中",
+      "infinite": "無限 ＆ 超越"
+    },
+    "Clicker": {
+      "title": "クリッカー・マスター",
+      "subtitle": "ボタンをクリックしてカウントアップ",
+      "clicks": "クリック",
+      "reset": "スコアをリセット",
+      "reset_confirm": "本当にスコアをリセットしますか？",
+      "saved": "スコアはブラウザに保存されます"
+    },
+    "ColorStudio": {
+      "title": "カラースタジオ",
+      "random": "ランダムカラー",
+      "tip": "プレビュー部分をクリックしてカラーピッカーを開きます"
+    }
+  },
+  "Common": {
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "reset": "リセット",
+    "back": "戻る"
+  },
+  "Footer": {
+    "text": "Chocorot による制作",
+    "all_rights": "All rights reserved."
+  }
+}
