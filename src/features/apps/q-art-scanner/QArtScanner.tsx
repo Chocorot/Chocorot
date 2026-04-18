@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import jsQR from 'jsqr';
 import { QRCanvas } from './QRCanvas';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,34 +17,64 @@ export function QArtScanner() {
   const t = useTranslations('Apps.QArtScanner');
   const [version, setVersion] = useState(QR_VERSIONS[0]);
   const [scanResult, setScanResult] = useState<string | null>(null);
+  
+  // Throttle state
+  const lastImageData = useRef<ImageData | null>(null);
+  const lastScanTime = useRef<number>(0);
+  const scanTimer = useRef<NodeJS.Timeout | null>(null);
 
-  const handleDataChange = useCallback((imageData: ImageData) => {
+  const performScan = useCallback(() => {
+    if (!lastImageData.current) return;
+    
+    const imageData = lastImageData.current;
     try {
       const code = jsQR(imageData.data, imageData.width, imageData.height);
-      if (code && code.data) {
-        setScanResult(code.data);
-      } else {
-        setScanResult(null);
-      }
+      setScanResult(code?.data || null);
     } catch (err) {
       console.error('QR Scan error:', err);
       setScanResult(null);
     }
+    
+    lastScanTime.current = Date.now();
+    if (scanTimer.current) {
+      clearTimeout(scanTimer.current);
+      scanTimer.current = null;
+    }
+  }, []);
+
+  const handleDataChange = useCallback((imageData: ImageData) => {
+    lastImageData.current = imageData;
+    const now = Date.now();
+    const timeSinceLastScan = now - lastScanTime.current;
+
+    if (timeSinceLastScan >= 500) {
+      performScan();
+    } else if (!scanTimer.current) {
+      // Schedule a scan if one isn't already scheduled
+      scanTimer.current = setTimeout(performScan, 500 - timeSinceLastScan);
+    }
+  }, [performScan]);
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (scanTimer.current) clearTimeout(scanTimer.current);
+    };
   }, []);
 
   return (
     <div className="w-full flex flex-col gap-10 animate-in fade-in duration-700">
       {/* Header & Tabs */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-card/50 backdrop-blur-xl border border-border p-6 rounded-2xl shadow-xl shadow-primary-500/5">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-card/30 backdrop-blur-xl border border-border p-6 rounded-2xl shadow-xl">
         <div className="flex items-center gap-4">
           <div className="p-3 bg-primary-500/10 rounded-xl text-primary-600">
             <ScanQrCode className="w-8 h-8" />
           </div>
           <div>
-            <h2 className="text-2xl font-black tracking-tight text-foreground">
+            <h2 className="text-2xl font-black tracking-tighter text-foreground uppercase">
               {t('title')}
             </h2>
-            <p className="text-sm font-medium text-foreground/40 leading-none mt-1">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/20 leading-none mt-1">
               {t('subtitle')}
             </p>
           </div>
@@ -54,7 +84,11 @@ export function QArtScanner() {
           {QR_VERSIONS.map((v) => (
             <button
               key={v.id}
-              onClick={() => setVersion(v)}
+              onClick={() => {
+                setVersion(v);
+                setScanResult(null);
+                lastImageData.current = null;
+              }}
               className={`px-4 py-2 rounded-lg text-xs font-bold transition-all min-w-[80px] ${
                 version.id === v.id
                   ? 'bg-background text-primary-600 shadow-sm'
@@ -62,7 +96,7 @@ export function QArtScanner() {
               }`}
             >
               <span className="block">{v.label}</span>
-              <span className={`block text-[10px] opacity-50 font-mono mt-0.5 ${version.id === v.id ? 'opacity-80' : ''}`}>
+              <span className={`block text-[10px] opacity-30 font-mono mt-0.5 ${version.id === v.id ? 'opacity-80' : ''}`}>
                 {v.size}x{v.size}
               </span>
             </button>
@@ -83,7 +117,7 @@ export function QArtScanner() {
         {/* Info & Result Section */}
         <div className="lg:col-span-12 xl:col-span-5 flex flex-col gap-6 w-full">
           {/* Result Box */}
-          <div className="bg-card/50 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl shadow-primary-500/5 flex flex-col gap-6 relative overflow-hidden group">
+          <div className="bg-card/20 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl flex flex-col gap-6 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
                <ScanQrCode className="w-32 h-32" />
             </div>
@@ -92,12 +126,12 @@ export function QArtScanner() {
               <div className={`p-2 rounded-full transition-colors duration-500 ${scanResult ? 'bg-green-500/20 text-green-600' : 'bg-foreground/5 text-foreground/20'}`}>
                 {scanResult ? <CheckCircle2 className="w-5 h-5" /> : <Info className="w-5 h-5" />}
               </div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-foreground/60">
+              <h3 className="text-xs font-black uppercase tracking-widest text-foreground/40">
                 {t('scan_status')}
               </h3>
             </div>
 
-            <div className={`min-h-[140px] flex items-center justify-center bg-foreground/[0.02] rounded-xl border border-dashed transition-all duration-500 p-6 text-center ${scanResult ? 'border-green-500/30' : 'border-border'}`}>
+            <div className={`min-h-[140px] flex items-center justify-center bg-foreground/[0.01] rounded-xl border border-dashed transition-all duration-500 p-6 text-center ${scanResult ? 'border-green-500/30 bg-green-500/[0.02]' : 'border-border'}`}>
               <AnimatePresence mode="wait">
                 {scanResult ? (
                   <motion.div
@@ -107,7 +141,7 @@ export function QArtScanner() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     className="flex flex-col gap-3"
                   >
-                    <span className="text-[10px] font-black text-green-600 uppercase tracking-[0.2em]">
+                    <span className="text-[10px] font-black text-green-600 uppercase tracking-[0.3em]">
                       {t('match_found')}
                     </span>
                     <p className="text-xl font-mono break-all text-foreground leading-relaxed selection:bg-green-500/20">
@@ -119,12 +153,12 @@ export function QArtScanner() {
                     key="empty"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex flex-col items-center gap-3"
+                    className="flex flex-col items-center gap-2"
                   >
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/30">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/20">
                       {t('waiting')}
                     </span>
-                    <p className="text-sm text-foreground/40 font-medium">
+                    <p className="text-xs text-foreground/30 font-medium max-w-[200px]">
                       {t('not_detected')}
                     </p>
                   </motion.div>
@@ -138,16 +172,16 @@ export function QArtScanner() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-primary-500/[0.03] border border-primary-500/10 rounded-2xl p-6 flex gap-4 items-start"
+            className="bg-primary-500/[0.02] border border-primary-500/10 rounded-2xl p-6 flex gap-4 items-start"
           >
             <div className="p-2 bg-primary-500/10 rounded-lg text-primary-500">
               <AlertCircle className="w-4 h-4 shrink-0" />
             </div>
             <div className="flex flex-col gap-1">
-              <h4 className="text-sm font-bold text-primary-600">
+              <h4 className="text-xs font-black uppercase tracking-wider text-primary-600">
                 {t('tips_title')}
               </h4>
-              <p className="text-xs leading-relaxed text-foreground/60 font-medium">
+              <p className="text-[11px] leading-relaxed text-foreground/50 font-medium">
                 {t('tips_content')}
               </p>
             </div>
