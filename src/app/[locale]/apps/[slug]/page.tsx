@@ -11,6 +11,7 @@ import { MorseBeeper } from '@/features/apps/morse-beeper/MorseBeeper';
 import { PiDisplay } from '@/features/apps/pi-display/PiDisplay';
 import { Clicker } from '@/features/apps/clicker/Clicker';
 import { ColorPicker } from '@/features/apps/color-picker/ColorPicker';
+import { QArtScanner } from '@/features/apps/q-art-scanner/QArtScanner';
 
 interface AppPageProps {
   params: Promise<{
@@ -37,6 +38,8 @@ export default function AppPage({ params }: AppPageProps) {
         return <Clicker />;
       case 'color-picker':
         return <ColorPicker />;
+      case 'q-art-scanner':
+        return <QArtScanner />;
       default:
         return null;
     }

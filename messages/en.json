@@ -69,6 +69,8 @@
     "clicker_desc": "A satisfying interactive clicker to track your speed.",
     "color_picker": "Color Studio",
     "color_picker_desc": "Clean and simple utility for color conversion and preview.",
+    "q_art_scanner": "Q Art Scanner",
+    "q_art_scanner_desc": "Draw your own QR code and see if you can make it scannable.",
     "MorseBeeper": {
       "placeholder": "Type something to translate...",
       "characters": "{count} characters",
@@ -94,6 +96,16 @@
       "title": "Color Studio",
       "random": "Random Color",
       "tip": "Click the preview square to open the color picker"
+    },
+    "QArtScanner": {
+      "title": "Q Art Scanner",
+      "subtitle": "Can you draw a working QR code?",
+      "scan_status": "Detection Status",
+      "match_found": "Match Found!",
+      "waiting": "Waiting for input...",
+      "not_detected": "No QR code detected in your drawing yet.",
+      "tips_title": "Pro Tips",
+      "tips_content": "QR codes require thick borders and those 3 big squares (Finder Patterns) in the corners. Good luck drawing them by hand!"
     }
   },
   "Socials": {

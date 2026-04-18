@@ -65,33 +65,45 @@
     "pi_desc": "探索超越数 π 的前 1,000 位数字。",
     "clicker": "连点计时器",
     "clicker_desc": "一个令人满足的互动连点器，用于追踪你的点击速度。",
-    "color_picker": "配色工作室",
-    "color_picker_desc": "简洁的颜色转换和预览工具。",
+    "color_picker": "Color Studio",
+    "color_picker_desc": "简洁实用的颜色转换与预览工具。",
+    "q_art_scanner": "Q Art 扫描器",
+    "q_art_scanner_desc": "自己动手画一个 QR 码，看看能否被成功扫描。",
     "MorseBeeper": {
       "placeholder": "输入要翻译的内容...",
       "characters": "{count} 个字符",
       "play": "播放序列",
-      "manual": "手动蜂鸣",
-      "tip": "提示：长按“手动蜂鸣”发出声音，或点击“播放序列”听取摩尔斯电码。"
+      "manual": "手动鸣笛",
+      "tip": "提示：长按“手动鸣笛”可发出声音，或点击“播放序列”收听翻译后的モールス电码。"
     },
     "PiDisplay": {
       "copy": "复制 π",
       "copied": "已复制！",
-      "showing": "显示 π 的前 1,000 位数字",
+      "showing": "正在显示 π 的前 1,000 位",
       "infinite": "无限且超越"
     },
     "Clicker": {
       "title": "点击大师",
       "subtitle": "点击按钮进行计数",
-      "clicks": "次点击",
+      "clicks": "点击次数",
       "reset": "重置分数",
       "reset_confirm": "确定要重置分数吗？",
-      "saved": "分数已保存到浏览器"
+      "saved": "分数将保存至浏览器"
     },
     "ColorStudio": {
-      "title": "配色工作室",
+      "title": "Color Studio",
       "random": "随机颜色",
-      "tip": "点击预览方块打开颜色选择器"
+      "tip": "点击预览方块以打开调色盘"
+    },
+    "QArtScanner": {
+      "title": "Q Art 扫描器",
+      "subtitle": "你能画出一个可以使用的 QR 码吗？",
+      "scan_status": "检测状态",
+      "match_found": "找到匹配内容！",
+      "waiting": "等待输入...",
+      "not_detected": "尚未从你的绘画中检测到 QR 码。",
+      "tips_title": "专业提示",
+      "tips_content": "QR 码需要粗边框和角落里的 3 个大方框（寻像图形）。祝你手绘挑战成功！"
     }
   },
   "Socials": {

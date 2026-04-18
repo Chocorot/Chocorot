@@ -1,4 +1,4 @@
-import { LucideIcon, Terminal, Hash, Fingerprint, Palette } from 'lucide-react';
+import { LucideIcon, Terminal, Hash, Fingerprint, Palette, ScanQrCode } from 'lucide-react';
 
 export interface AppMetadata {
   id: string;
@@ -41,5 +41,13 @@ export const APPS: AppMetadata[] = [
     descriptionKey: 'Apps.color_picker_desc',
     icon: Palette,
     color: 'bg-indigo-500',
+  },
+  {
+    id: 'q-art-scanner',
+    slug: 'q-art-scanner',
+    titleKey: 'Apps.q_art_scanner',
+    descriptionKey: 'Apps.q_art_scanner_desc',
+    icon: ScanQrCode,
+    color: 'bg-emerald-500',
   },
 ];
