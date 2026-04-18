@@ -103,7 +103,15 @@
       "waiting": "等待输入...",
       "not_detected": "尚未从你的绘画中检测到 QR 码。",
       "tips_title": "专业提示",
-      "tips_content": "QR 码需要粗边框和角落里的 3 个大方框（寻像图形）。祝你手绘挑战成功！"
+      "tips_content": "QR 码需要较粗的边界和角落里的 3 个大正方形（定位图案）。祝手绘好运！",
+      "clear_canvas": "清空画布",
+      "clear_confirm_title": "清空绘图？",
+      "clear_confirm_desc": "这将永久删除您当前的作品并重置网格。您要继续吗？",
+      "cancel": "取消",
+      "confirm": "是的，清空",
+      "export_image": "导出图片",
+      "saved": "进度已保存",
+      "save_error": "保存失败"
     }
   },
   "Socials": {

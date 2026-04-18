@@ -105,7 +105,15 @@
       "waiting": "Waiting for input...",
       "not_detected": "No QR code detected in your drawing yet.",
       "tips_title": "Pro Tips",
-      "tips_content": "QR codes require thick borders and those 3 big squares (Finder Patterns) in the corners. Good luck drawing them by hand!"
+      "tips_content": "QR codes require thick borders and those 3 big squares (Finder Patterns) in the corners. Good luck drawing them by hand!",
+      "clear_canvas": "Clear Canvas",
+      "clear_confirm_title": "Clear Drawing?",
+      "clear_confirm_desc": "This will permanently erase your current artwork and reset the grid. Do you want to continue?",
+      "cancel": "Cancel",
+      "confirm": "Yes, Clear It",
+      "export_image": "Export Image",
+      "saved": "Progress Saved",
+      "save_error": "Save Failed"
     }
   },
   "Socials": {
