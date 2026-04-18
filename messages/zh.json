@@ -94,6 +94,20 @@
       "tip": "点击预览方块打开颜色选择器"
     }
   },
+  "Socials": {
+    "title": "社交联系",
+    "subtitle": "在线上找到我并保持联系的方式。",
+    "copy_handle": "复制",
+    "visit": "访问主页",
+    "platforms": {
+      "github": "GitHub",
+      "github_desc": "探索我的开源项目、代码仓库和技术贡献。",
+      "youtube": "YouTube",
+      "youtube_desc": "查看我的硬件构建、钢琴演奏和开发教程。",
+      "discord": "Discord",
+      "discord_desc": "加入我们的社区或直接联系我进行合作。"
+    }
+  },
   "Common": {
     "copy": "复制",
     "copied": "已复制！",

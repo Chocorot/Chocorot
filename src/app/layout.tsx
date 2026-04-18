@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/Providers";
+import { AuthProvider } from "@/components/Firebase/AuthContext";
 import FirebaseAnalytics from "@/components/FirebaseAnalytics";
 
 const geistSans = Geist({
@@ -35,8 +36,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <FirebaseAnalytics />
-          {children}
+          <AuthProvider>
+            <FirebaseAnalytics />
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

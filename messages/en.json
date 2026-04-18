@@ -96,6 +96,20 @@
       "tip": "Click the preview square to open the color picker"
     }
   },
+  "Socials": {
+    "title": "Social Connect",
+    "subtitle": "Where to find me online and how to stay in touch.",
+    "copy_handle": "Copy",
+    "visit": "Visit Profile",
+    "platforms": {
+      "github": "GitHub",
+      "github_desc": "Explore my open-source projects, repositories, and technical contributions.",
+      "youtube": "YouTube",
+      "youtube_desc": "Check out my hardware builds, piano covers, and development tutorials.",
+      "discord": "Discord",
+      "discord_desc": "Join our community or reach out directly for collaborations."
+    }
+  },
   "Common": {
     "copy": "Copy",
     "copied": "Copied!",

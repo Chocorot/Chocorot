@@ -35,7 +35,7 @@ export function Navbar() {
     { href: '/about', label: t('about') },
     { href: '/apps', label: t('apps') },
     { href: '/portfolio', label: t('portfolio') },
-    { href: '/websites', label: t('websites') },
+    { href: '/socials', label: t('socials') },
   ];
 
   return (
@@ -110,12 +110,6 @@ export function Navbar() {
                 <div className="flex items-center justify-between p-4 rounded-md bg-foreground/5 border border-border">
                   <span className="text-xs font-black uppercase tracking-widest text-foreground/30">Theme Settings</span>
                   <ThemeToggle />
-                </div>
-                
-                <div className="flex gap-4 px-1">
-                   <Link href="/socials" className="text-xs font-bold uppercase tracking-widest text-foreground/40 hover:text-primary-600 transition-colors">
-                     {t('socials')}
-                   </Link>
                 </div>
               </motion.div>
             </div>
