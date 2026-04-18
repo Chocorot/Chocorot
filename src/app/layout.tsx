@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/Providers";
 import { AuthProvider } from "@/components/Firebase/AuthContext";
-import FirebaseAnalytics from "@/components/FirebaseAnalytics";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +37,12 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AuthProvider>
-            <FirebaseAnalytics />
             {children}
           </AuthProvider>
         </ThemeProvider>
+        {process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );
