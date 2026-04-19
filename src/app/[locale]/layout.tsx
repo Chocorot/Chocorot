@@ -13,67 +13,38 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const monocraft = localFont({
   src: [
     {
-      path: "../../../public/fonts/Monocraft-01.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Italic-02.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Light-09.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Light-Italic-10.ttf",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-ExtraLight-11.ttf",
+      path: "../../../public/fonts/Monocraft-ExtraLight-11.woff2",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Monocraft-ExtraLight-Italic-12.ttf",
-      weight: "200",
+      path: "../../../public/fonts/Monocraft-01.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/Monocraft-Italic-02.woff2",
+      weight: "400",
       style: "italic",
     },
     {
-      path: "../../../public/fonts/Monocraft-SemiBold-07.ttf",
+      path: "../../../public/fonts/Monocraft-SemiBold-07.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Monocraft-SemiBold-Italic-08.ttf",
-      weight: "600",
-      style: "italic",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Bold-05.ttf",
+      path: "../../../public/fonts/Monocraft-Bold-05.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Monocraft-Bold-Italic-06.ttf",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Black-03.ttf",
+      path: "../../../public/fonts/Monocraft-Black-03.woff2",
       weight: "900",
       style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Black-Italic-04.ttf",
-      weight: "900",
-      style: "italic",
     },
   ],
   variable: "--font-monocraft",
+  display: "swap",
 });
 
 export default async function LocaleLayout({
