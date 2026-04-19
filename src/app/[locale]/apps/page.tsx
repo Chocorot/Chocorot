@@ -1,24 +1,33 @@
 import { getTranslations } from 'next-intl/server';
 import { AppsView } from '@/components/views/AppsView';
+import { generateLocalizedMetadata } from '@/lib/seo';
+import { Breadcrumb } from '@/components/SEO/Breadcrumb';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  return {
+  return generateLocalizedMetadata({
     title: t('apps.title'),
     description: t('apps.description'),
-    alternates: {
-      canonical: `/${locale}/apps`,
-      languages: {
-        en: '/en/apps',
-        zh: '/zh/apps',
-        ja: '/ja/apps',
-      },
-    },
-  };
+    path: '/apps',
+    locale,
+  });
 }
 
-export default function AppsPage() {
-  return <AppsView />;
+export default async function AppsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const nt = await getTranslations({ locale, namespace: 'Navigation' });
+
+  return (
+    <div className="flex flex-col items-center w-full">
+      <Breadcrumb 
+        items={[
+          { name: nt('home'), item: '/' },
+          { name: nt('apps'), item: '/apps' }
+        ]} 
+      />
+      <AppsView />
+    </div>
+  );
 }

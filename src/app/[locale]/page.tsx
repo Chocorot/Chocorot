@@ -2,23 +2,18 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { FaArrowRight } from 'react-icons/fa';
+import { generateLocalizedMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  return {
+  return generateLocalizedMetadata({
     title: t('home.title'),
     description: t('home.description'),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        en: '/en',
-        zh: '/zh',
-        ja: '/ja',
-      },
-    },
-  };
+    path: '',
+    locale,
+  });
 }
 
 export default function HomePage() {

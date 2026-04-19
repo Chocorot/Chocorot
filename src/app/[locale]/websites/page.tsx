@@ -1,30 +1,33 @@
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { FaExternalLinkAlt, FaGlobe, FaRobot } from 'react-icons/fa';
+import { generateLocalizedMetadata } from '@/lib/seo';
+import { Breadcrumb } from '@/components/SEO/Breadcrumb';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  return {
+  return generateLocalizedMetadata({
     title: t('websites.title'),
     description: t('websites.description'),
-    alternates: {
-      canonical: `/${locale}/websites`,
-      languages: {
-        en: '/en/websites',
-        zh: '/zh/websites',
-        ja: '/ja/websites',
-      },
-    },
-  };
+    path: '/websites',
+    locale,
+  });
 }
 
 export default function WebsitesPage() {
   const t = useTranslations('Websites');
+  const nt = useTranslations('Navigation');
 
   return (
-    <div className="max-w-5xl w-full py-12 flex flex-col gap-12">
+    <div className="max-w-5xl w-full py-12 flex flex-col items-center gap-12">
+      <Breadcrumb 
+        items={[
+          { name: nt('home'), item: '/' },
+          { name: nt('websites'), item: '/websites' }
+        ]} 
+      />
       <div className="space-y-4 text-center">
         <h1 className="text-5xl font-black uppercase">{t('title')}</h1>
       </div>
