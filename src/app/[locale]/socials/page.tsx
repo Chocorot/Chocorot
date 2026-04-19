@@ -54,7 +54,7 @@ export default function SocialsPage() {
     <div className="max-w-4xl w-full mx-auto space-y-12 py-8">
       <div className="text-center space-y-4">
         <motion.h1 
-          className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-primary-600"
+          className="text-5xl md:text-7xl font-black uppercase text-primary-600"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -110,7 +110,7 @@ export default function SocialsPage() {
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-2xl font-black tracking-tight">{social.name}</h3>
+                <h3 className="text-2xl font-black">{social.name}</h3>
                 <p className="text-lg font-bold text-primary-500">{social.handle}</p>
                 <p className="text-foreground/60 leading-relaxed pt-2">
                   {social.description}

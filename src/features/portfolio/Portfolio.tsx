@@ -10,7 +10,7 @@ export async function Portfolio() {
   return (
     <div className="w-full max-w-6xl flex flex-col gap-12 px-4">
       <div className="text-center space-y-4">
-        <h2 className="text-5xl font-black tracking-tighter uppercase text-primary-600">
+        <h2 className="text-5xl font-black uppercase text-primary-600">
           {nt('portfolio')}
         </h2>
         <p className="text-foreground/60 text-lg max-w-2xl mx-auto">

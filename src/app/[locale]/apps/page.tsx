@@ -12,7 +12,7 @@ export default function AppsPage() {
   return (
     <div className="flex flex-col items-center gap-16 py-12 w-full max-w-6xl animate-in fade-in slide-in-from-bottom-8 duration-700">
       <div className="text-center space-y-4">
-        <h1 className="text-5xl font-black tracking-tighter uppercase">{t('Apps.title')}</h1>
+        <h1 className="text-5xl font-black uppercase">{t('Apps.title')}</h1>
         <p className="text-foreground/60 text-lg max-w-2xl mx-auto">{t('Apps.subtitle')}</p>
       </div>
 

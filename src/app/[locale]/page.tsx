@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center text-center py-16 md:py-32 gap-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 min-h-[calc(100vh-4rem)]">
       <div className="space-y-6">
-        <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-primary-600">
+        <h1 className="text-7xl md:text-9xl font-black text-primary-600">
           {t('title')}
         </h1>
         

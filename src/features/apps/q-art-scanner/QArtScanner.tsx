@@ -84,7 +84,7 @@ export function QArtScanner() {
             <ScanQrCode className="w-8 h-8" />
           </div>
           <div>
-            <h2 className="text-2xl font-black tracking-tighter text-foreground uppercase">
+            <h2 className="text-2xl font-black text-foreground uppercase">
               {t('title')}
             </h2>
             <div className="flex items-center gap-2 mt-1">
@@ -249,7 +249,7 @@ export function QArtScanner() {
               </div>
               
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-black uppercase tracking-tight text-foreground">
+                <h3 className="text-xl font-black uppercase text-foreground">
                   {t('clear_confirm_title')}
                 </h3>
                 <p className="text-sm text-foreground/50 leading-relaxed">

@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="w-full border-t border-border bg-background/50 py-12 mt-auto">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col gap-2 text-center md:text-left">
-          <span className="text-xl font-black tracking-tighter">CHOCOROT</span>
+          <span className="text-xl font-black">CHOCOROT</span>
           <p className="text-sm text-foreground/50">
             {t('text')}
           </p>

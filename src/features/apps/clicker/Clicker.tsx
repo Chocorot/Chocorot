@@ -48,7 +48,7 @@ export function Clicker() {
   return (
     <div className="w-full card-standard flex flex-col gap-12 shadow-xl shadow-rose-500/5 items-center justify-center py-16">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold flex items-center justify-center gap-3 text-rose-600 uppercase tracking-tight">
+        <h2 className="text-2xl font-bold flex items-center justify-center gap-3 text-rose-600 uppercase">
           <Fingerprint className="w-6 h-6" />
           {t('title')}
         </h2>

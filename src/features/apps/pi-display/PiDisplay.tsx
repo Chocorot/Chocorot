@@ -41,7 +41,7 @@ export function PiDisplay() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-2xl md:text-3xl font-mono leading-relaxed break-all text-foreground/80 tracking-tight"
+            className="text-2xl md:text-3xl font-mono leading-relaxed break-all text-foreground/80"
           >
             <span className="text-amber-600 font-bold">3.</span>
             {PI_VALUE.slice(2).split('').map((digit, i) => (

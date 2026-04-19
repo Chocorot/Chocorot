@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="max-w-4xl w-full py-12 flex flex-col gap-12">
       <div className="space-y-4 text-center">
-        <h1 className="text-5xl font-black tracking-tighter uppercase">{t('title')}</h1>
+        <h1 className="text-5xl font-black uppercase"> {t('title')}</h1>
         <p className="text-xl text-foreground/60">{t('bio')}</p>
       </div>
 
