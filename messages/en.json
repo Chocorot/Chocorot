@@ -162,6 +162,23 @@
     "reset": "Reset",
     "back": "Back"
   },
+  "Errors": {
+    "404": {
+      "title": "404 - Chunk Not Found",
+      "description": "It seems you've wandered into the void. This chunk hasn't been generated yet.",
+      "button": "Respawn at Home"
+    },
+    "500": {
+      "title": "500 - Internal Server Error",
+      "description": "An unexpected exception occurred. The server encountered a problem while processing your request.",
+      "button": "Try to Reconnect"
+    },
+    "generic": {
+      "title": "Error Occurred",
+      "description": "Something went wrong. Please check your connection or try again later.",
+      "button": "Go Back"
+    }
+  },
   "Footer": {
     "text": "Made with care by Chocorot",
     "all_rights": "All rights reserved."

@@ -4,48 +4,11 @@ import { Footer } from "@/components/molecules/Footer";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import localFont from "next/font/local";
+import { monocraft } from "@/styles/fonts";
 import { JsonLd } from "@/components/SEO/JsonLd";
 import { ThemeProvider } from "@/components/Providers";
 import { AuthProvider } from "@/components/Firebase/AuthContext";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
-const monocraft = localFont({
-  src: [
-    {
-      path: "../../../public/fonts/Monocraft-ExtraLight-11.woff2",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-01.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Italic-02.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-SemiBold-07.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Bold-05.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/Monocraft-Black-03.woff2",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-monocraft",
-  display: "swap",
-});
 
 export default async function LocaleLayout({
   children,
