@@ -10,6 +10,12 @@ import { ThemeProvider } from "@/components/Providers";
 import { AuthProvider } from "@/components/Firebase/AuthContext";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export const dynamicParams = false;
+
 export default async function LocaleLayout({
   children,
   params,
@@ -63,7 +69,7 @@ export default async function LocaleLayout({
           </AuthProvider>
         </ThemeProvider>
         {process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID} />
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID} debugMode={false} />
         )}
       </body>
     </html>

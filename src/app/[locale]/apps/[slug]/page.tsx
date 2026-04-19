@@ -4,6 +4,18 @@ import { APPS } from '@/lib/apps';
 import { AppDetailView } from '@/components/views/AppDetailView';
 import { generateLocalizedMetadata } from '@/lib/seo';
 import { Breadcrumb } from '@/components/SEO/Breadcrumb';
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return APPS.flatMap((app) => 
+    routing.locales.map((locale) => ({
+      locale,
+      slug: app.slug
+    }))
+  );
+}
+
+export const dynamicParams = false;
 
 interface AppPageProps {
   params: Promise<{
