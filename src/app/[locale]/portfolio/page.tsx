@@ -1,6 +1,25 @@
 import { Portfolio } from '@/features/portfolio/Portfolio';
 import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('portfolio.title'),
+    description: t('portfolio.description'),
+    alternates: {
+      canonical: `/${locale}/portfolio`,
+      languages: {
+        en: '/en/portfolio',
+        zh: '/zh/portfolio',
+        ja: '/ja/portfolio',
+      },
+    },
+  };
+}
 
 export default function PortfolioPage() {
   const t = useTranslations('Portfolio');

@@ -5,6 +5,31 @@ import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { APPS } from '@/lib/apps';
 import { ChevronLeft } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const app = APPS.find((a) => a.slug === slug);
+  
+  if (!app) return {};
+
+  const t = await getTranslations({ locale });
+  const title = t(app.titleKey);
+  const description = t(app.descriptionKey);
+
+  return {
+    title: `${title} | Apps`,
+    description: description,
+    alternates: {
+      canonical: `/${locale}/apps/${slug}`,
+      languages: {
+        en: `/en/apps/${slug}`,
+        zh: `/zh/apps/${slug}`,
+        ja: `/ja/apps/${slug}`,
+      },
+    },
+  };
+}
 
 // Feature Imports
 import { MorseBeeper } from '@/features/apps/morse-beeper/MorseBeeper';

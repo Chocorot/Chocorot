@@ -1,5 +1,24 @@
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { FaExternalLinkAlt, FaGlobe, FaRobot } from 'react-icons/fa';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('websites.title'),
+    description: t('websites.description'),
+    alternates: {
+      canonical: `/${locale}/websites`,
+      languages: {
+        en: '/en/websites',
+        zh: '/zh/websites',
+        ja: '/ja/websites',
+      },
+    },
+  };
+}
 
 export default function WebsitesPage() {
   const t = useTranslations('Websites');

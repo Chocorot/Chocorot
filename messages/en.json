@@ -1,4 +1,30 @@
 {
+  "Metadata": {
+    "home": {
+      "title": "Chocorot | Creative Developer",
+      "description": "Personal portfolio and home for experimental apps and creative coding projects by Chocorot."
+    },
+    "about": {
+      "title": "About | Chocorot",
+      "description": "Learn more about Chocorot, a builder across software and hardware, piano enthusiast, and AI explorer."
+    },
+    "portfolio": {
+      "title": "Portfolio | Chocorot",
+      "description": "A collection of open-source projects, libraries, and technical contributions by Chocorot."
+    },
+    "apps": {
+      "title": "Apps | Chocorot",
+      "description": "Explore a collection of experimental applications and tools, from Morse code to QR drawing."
+    },
+    "websites": {
+      "title": "Websites | Chocorot",
+      "description": "Showcase of websites and digital experiences built with modern web technologies."
+    },
+    "socials": {
+      "title": "Socials | Chocorot",
+      "description": "Find and connect with Chocorot on GitHub, YouTube, Discord, and more."
+    }
+  },
   "Index": {
     "title": "Chocorot",
     "subtitle": "Creative Developer & Builder",

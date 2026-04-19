@@ -1,10 +1,29 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { APPS } from '@/lib/apps';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('apps.title'),
+    description: t('apps.description'),
+    alternates: {
+      canonical: `/${locale}/apps`,
+      languages: {
+        en: '/en/apps',
+        zh: '/zh/apps',
+        ja: '/ja/apps',
+      },
+    },
+  };
+}
 
 export default function AppsPage() {
   const t = useTranslations();

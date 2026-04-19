@@ -1,0 +1,16 @@
+{
+  "name": "Chocorot | Creative Developer",
+  "short_name": "Chocorot",
+  "description": "Personal portfolio and home for experimental apps and creative coding projects by Chocorot.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon-light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

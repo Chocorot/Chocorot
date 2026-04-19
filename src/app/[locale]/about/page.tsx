@@ -1,5 +1,24 @@
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { FaCode, FaTools, FaMusic } from 'react-icons/fa';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('about.title'),
+    description: t('about.description'),
+    alternates: {
+      canonical: `/${locale}/about`,
+      languages: {
+        en: '/en/about',
+        zh: '/zh/about',
+        ja: '/ja/about',
+      },
+    },
+  };
+}
 
 export default function AboutPage() {
   const t = useTranslations('About');

@@ -1,4 +1,30 @@
 {
+  "Metadata": {
+    "home": {
+      "title": "Chocorot | 创意开发者",
+      "description": "Chocorot 的个人作品集，展示实验性应用和创意编程项目。"
+    },
+    "about": {
+      "title": "关于 | Chocorot",
+      "description": "了解 Chocorot —— 跨软件与硬件的构建者、钢琴爱好者和 AI 探索者。"
+    },
+    "portfolio": {
+      "title": "作品集 | Chocorot",
+      "description": "Chocorot 的开源项目、库和技术贡献集合。"
+    },
+    "apps": {
+      "title": "应用 | Chocorot",
+      "description": "探索实验性应用和工具，从摩尔斯电码到 QR 绘画。"
+    },
+    "websites": {
+      "title": "网站 | Chocorot",
+      "description": "使用现代 Web 技术构建的网站和数字体验展示。"
+    },
+    "socials": {
+      "title": "社交 | Chocorot",
+      "description": "在 GitHub、YouTube、Discord 等平台找到并联系 Chocorot。"
+    }
+  },
   "Index": {
     "title": "Chocorot",
     "subtitle": "创意开发者与构建者",

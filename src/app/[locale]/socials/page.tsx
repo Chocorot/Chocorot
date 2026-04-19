@@ -1,10 +1,29 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { motion } from 'framer-motion';
 import { FaGithub, FaYoutube, FaDiscord, FaCopy, FaCheck, FaExternalLinkAlt } from 'react-icons/fa';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('socials.title'),
+    description: t('socials.description'),
+    alternates: {
+      canonical: `/${locale}/socials`,
+      languages: {
+        en: '/en/socials',
+        zh: '/zh/socials',
+        ja: '/ja/socials',
+      },
+    },
+  };
+}
 
 export default function SocialsPage() {
   const t = useTranslations('Socials');

@@ -1,4 +1,30 @@
 {
+  "Metadata": {
+    "home": {
+      "title": "Chocorot | クリエイティブ・デベロッパー",
+      "description": "Chocorot による実験的なアプリやクリエイティブ・コーディングのプロジェクトを公開している個人ポートフォリオ。"
+    },
+    "about": {
+      "title": "私について | Chocorot",
+      "description": "ソフトウェアとハードウェアの両面で制作を行うビルダー、ピアノ愛好家、AI探求者である Chocorot について紹介します。"
+    },
+    "portfolio": {
+      "title": "ポートフォリオ | Chocorot",
+      "description": "Chocorot によるオープンソースプロジェクト、ライブラリ、技術的な貢献のコレクション。"
+    },
+    "apps": {
+      "title": "アプリ | Chocorot",
+      "description": "モールス信号からQR描画まで、実験的なアプリケーションやツールのコレクションを探索しましょう。"
+    },
+    "websites": {
+      "title": "ウェブサイト | Chocorot",
+      "description": "モダンなウェブ技術で構築されたウェブサイトとデジタル体験のショーケース。"
+    },
+    "socials": {
+      "title": "SNS | Chocorot",
+      "description": "GitHub、YouTube、Discord などで Chocorot と繋がりましょう。"
+    }
+  },
   "Index": {
     "title": "Chocorot",
     "subtitle": "クリエイティブ・デベロッパー ＆ ビルダー",
