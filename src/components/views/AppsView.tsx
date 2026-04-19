@@ -1,13 +1,28 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 import { APPS } from '@/lib/apps';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { useRef } from 'react';
 
 export function AppsView() {
   const t = useTranslations();
+  const router = useRouter();
+  const prefetchTimeouts = useRef<{ [key: string]: NodeJS.Timeout }>({});
+
+  const handleMouseEnter = (slug: string) => {
+    prefetchTimeouts.current[slug] = setTimeout(() => {
+      router.prefetch(`/apps/${slug}`);
+    }, 80);
+  };
+
+  const handleMouseLeave = (slug: string) => {
+    if (prefetchTimeouts.current[slug]) {
+      clearTimeout(prefetchTimeouts.current[slug]);
+    }
+  };
 
   return (
     <div className="flex flex-col items-center gap-16 py-12 w-full max-w-6xl animate-in fade-in slide-in-from-bottom-8 duration-700">
@@ -27,6 +42,8 @@ export function AppsView() {
             <Link
               href={`/apps/${app.slug}`}
               className="group block card-standard hover:border-primary-500/50 transition-all shadow-sm h-full relative overflow-hidden"
+              onMouseEnter={() => handleMouseEnter(app.slug)}
+              onMouseLeave={() => handleMouseLeave(app.slug)}
             >
               <div className="flex items-center md:items-start justify-between relative z-10 gap-4">
                 <div className="flex items-center gap-4 md:flex-col md:items-start md:gap-0">
