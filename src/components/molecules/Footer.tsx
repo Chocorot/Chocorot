@@ -12,10 +12,10 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col gap-2 text-center md:text-left">
           <span className="text-xl font-black">CHOCOROT</span>
-          <p className="text-sm text-foreground/50">
+          <p className="text-sm text-foreground/70">
             {t('text')}
           </p>
-          <p className="text-xs text-foreground/30 uppercase tracking-widest">
+          <p className="text-xs text-foreground/60 uppercase tracking-widest">
             © {new Date().getFullYear()} — {t('all_rights')}
           </p>
         </div>
